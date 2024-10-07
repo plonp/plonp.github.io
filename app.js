@@ -9,4 +9,4 @@ function counter() {
 		_textCount--;
 	}
 }
-setInterval(counter, 100);
+setInterval(counter, 800);
