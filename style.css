@@ -1,20 +1,15 @@
 *, *::before, *::after {
 	margin: 0;
-	padding: 0;
 }
 
 body {
-	background-color: #1E1E1E;
 	color: white;
-	max-width: 70vw;
+	width: max(500px, 70%);
 	margin: auto;
 	font-size: 3rem;
 }
 
 .container {
-	width: auto;
-	padding: 100px;
-	margin: 200px;
 	border: 1px solid white;
 }
 span {
