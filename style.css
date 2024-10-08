@@ -8,7 +8,7 @@ body {
 	color: white;
 	max-width: 70vw;
 	margin: auto;
-	font-size: 3rem;
+	font-size: 2.5rem;
 }
 
 .container {
@@ -17,6 +17,6 @@ body {
 	margin: 200px;
 	border: 1px solid white;
 }
-span {
+.container span {
 	color: darksalmon;
 }
