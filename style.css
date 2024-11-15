@@ -8,13 +8,9 @@
 }
 
 body {
-	/*display: grid; place-items: center;*/
-	/*position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);*/
 	background-color: #1E1E1E;
 	color: white;
 	width: 100%; max-width: var(--max-width);
-	/*height: 100vh;*/
-	/*display: flex; align-content: center; justify-content: center; align-content:top; align-items: center;*/
 	margin: auto;
 	margin-top: clamp(0px, calc(50vw - 450px),200px);
 	padding: 10px;
