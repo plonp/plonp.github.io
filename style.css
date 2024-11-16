@@ -1,5 +1,8 @@
 :root {
 	--max-width: 1024px;
+	--border-color: #101010;
+	--border-radius: 10px;
+	font-family: "tahoma", sans-serif;
 }
 *, *::before, *::after {
 	box-sizing: border-box;
@@ -12,15 +15,35 @@ body {
 	color: white;
 	width: 100%; max-width: var(--max-width);
 	margin: auto;
-	margin-top: clamp(0px, calc(50vw - 450px),200px);
+	/*margin-top: clamp(0px, calc(50vw - 450px),200px);*/
 	padding: 10px;
 	font-size: 2.5rem;
 }
 
-.container {
+.hero {
 	border: 1px solid #101010;
 	padding: 10px 20px;
 }
-.container span {
-	color: darksalmon;
+.hero span {color: darksalmon;}
+
+
+
+.card-container-A {
+	--container-A-width: 100%;
+	margin-top: 40px;
+	border: 1px solid var(--border-color);
+	display: flex; flex-flow: wrap;
+	gap: 5px;
+	padding: 10px;
+	width: var(--container-A-width);
+}
+.card-A {
+	flex-grow: 1;
+	font-size: 1.2rem;
+	min-width: min(260px,var(--container-A-width));
+	/*width: 100%; max-width: 400px;*/
+	padding: 10px 15px;
+	color: white;
+	background-color: black;
+	border-radius: var(--border-radius);
 }
