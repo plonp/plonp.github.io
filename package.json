@@ -1,5 +1,5 @@
 {
-  "homepage": "http://plonp.github.io/app_react_vite",
+  "homepage": "http://plonp.github.io",
   "name": "app_react_vite",
   "private": true,
   "version": "0.0.0",
@@ -9,10 +9,6 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
-  },
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
   },
   "dependencies": {
     "react": "^18.3.1",
