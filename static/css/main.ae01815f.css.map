@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.ae01815f.css","mappings":"AAAA,KAEC,wBAAyB,CACzB,UAAY,CACZ,YAAa,CAHb,gBAID","sources":["style.css"],"sourcesContent":["body {\r\n\tmin-height: 100vh;\r\n\tbackground-color: #242424;\r\n\tcolor: white;\r\n\tfont: calibri;\r\n}"],"names":[],"ignoreList":[],"sourceRoot":""}
