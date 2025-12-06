@@ -1,0 +1,30 @@
+<body>
+	<a>Btn Test</a>	
+	<a>Btn Test 2</a>	
+	<a>Btn Test 3</a>	
+	<a>Btn Test 4</a>	
+	<script>
+		const _btn = document.querySelector('a'); console.log('_btn : ', _btn);
+		_btn.addEventListener('click', e => {console.log(e);});
+	</script>
+</body>
+
+<style>
+html {border: 1px solid green;}
+body {border: 1px solid yellow; width: fit-content;}
+a {
+	display: block;
+	padding: .75rem 1rem;
+	background-color: #242424;
+	color: #808080;
+	font-family: calibri;
+	border: 1px solid white;
+	width: fit-content;
+	/*margin: auto;*/
+}
+a:hover {
+	cursor: pointer;
+	color: #FFFFFF;
+	background-color: #353535;
+}
+</style>
