@@ -29,7 +29,3 @@ async function fetchData(_url) {
 		const _codeBlock = document.querySelector('.component-code-block').innerHTML = `${CSSDataFix}`;
 	} catch (error) {console.log('error : ', error);}
 }
-
-
-// Search button
-// Add last modified date of the component
