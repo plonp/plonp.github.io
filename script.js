@@ -5,10 +5,11 @@ window.onload = function() {
 		fetchData(_libButtons[0]);
 	// Buttons
 		document.addEventListener('click', (e) => {
-			e.preventDefault();
+			// e.preventDefault();
 			switch (e.target.id) {
 				case "btn-html": case "btn-css":
 					console.log(e.target.parentElement.parentElement);
+					loadCSS();
 					break;
 				default:
 					console.log(e.target);
@@ -48,8 +49,6 @@ async function fetchData(_url) {
 			const _compPreview = document.querySelector('.component-preview');
 			const shadow = _compPreview.attachShadow({mode: 'open'}); //console.log(shadow)
 			shadow.appendChild(_component);
-
-			// shadow.innerHTML = `${_component.innerHTML}`;
 
 	} catch (error) {console.log('error : ', error);}
 }
