@@ -10,30 +10,34 @@ window.onload = function() {
 async function fetchData(_url) {
 	try {
 		const response = await fetch(_url);
-		const data = await response.text();
-		let _date = new Date(response.headers.get('last-modified')); console.log(_date);
+		let data = await response.text(); //console.log('data : ', data);
+		data = data.replace('\r\n', '');
+		// Get HTML Code Block
+			const startIndex = data.indexOf('<body>'), endIndex = data.indexOf('</body>');
+			let codeHTML = data.substring(startIndex, endIndex).replace('<body>','');
+			console.log('codeHTML : ', JSON.stringify(codeHTML));
+
+		// Get Last Modified Date
+			let _date = new Date(response.headers.get('last-modified'));
+			_date = `${_date.getDate()}.${_date.getMonth()}.${_date.getFullYear()}`;
+			console.log(_date);
 		
 		const parser = new DOMParser();
-		const HTMLData = parser.parseFromString(data, 'text/html');
-		console.log('HTMLData : ' , HTMLData)
+		const HTMLData = parser.parseFromString(data, 'text/html'); //console.log('HTMLData : ' , HTMLData);
 
 		// Load Code Preview
-			const codeBlock = HTMLData.querySelector('style');
-			const codeBlockFix = codeBlock.textContent.replace('\n', '');
-			// codeBlock.textContent.replaceAll('\n', '').replaceAll('\t', '');
+			const codeCSS = HTMLData.querySelector('style').textContent.replace('\n', '');
+
+			const htmlBlock = HTMLData.body; //console.log(htmlBlock.textContent);
 
 		const _component = HTMLData.querySelector('body');
-		const _script = HTMLData.querySelector('script');
-		// const _previewComp = document.querySelector('.component-preview');
 		const _codeBlock = document.querySelector('.component-code-block');
-		_codeBlock.innerHTML = `${codeBlockFix}`;
-		// _codeBlock.innerHTML += `<a class="btn-copy" href=""><img src="/assets/icons/icon-button-copy.svg"></a>`
+		_codeBlock.textContent = `${codeCSS}`;
 
 		// Shadow DOM
 			const _compPreview = document.querySelector('.component-preview');
-			const shadow = _compPreview.attachShadow({mode: 'open'}); console.log(shadow)
+			const shadow = _compPreview.attachShadow({mode: 'open'}); //console.log(shadow)
 			shadow.appendChild(_component);
-			shadow.appendChild(_script);
 
 			// shadow.innerHTML = `${_component.innerHTML}`;
 
