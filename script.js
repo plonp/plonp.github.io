@@ -21,8 +21,9 @@ window.onload = function() {
 async function fetchData(_url) {
 	try {
 		const response = await fetch(_url);
-		let data = await response.text(); //console.log('data : ', data);
-		data = data.replace('\r\n', '');
+		let data = await response.text(); console.log('data : ', JSON.stringify(data));
+		data = data.replace('\r\n', ''); console.log('data : ', JSON.stringify(data));
+		data = data.replaceAll('\r',''); console.log('data : ', JSON.stringify(data));
 
 		// Parse Fetched Data to HTML DOM
 			const parser = new DOMParser();
