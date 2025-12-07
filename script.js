@@ -3,36 +3,43 @@ window.onload = function() {
 		const _libButtons = ["/src/buttons/button.html", "/src/buttons/mgm.html"];
 	// Fetch components
 		fetchData(_libButtons[0]);
-	// Search Bar
-		const searchBar = document.querySelector('#search-bar');
-		searchBar.addEventListener('input', (e) => {searchComponent(e.target.value);});
-		function searchComponent(_str) {
-			const _val = searchBar.value.toLowerCase();
-			const container = document.querySelector('#assets-container');
-			for (var i = 0; i < container.children.length; i++) {
-				let _strContentCurrentChild = container.children[i].querySelector(':first-child').innerHTML.toLowerCase();
-				const isVisible = _strContentCurrentChild.includes(_val);
-				container.children[i].classList.toggle('hide', !isVisible);
-			}
-		}
 	// Category Buttons
+		const searchBar = document.querySelector('#search-bar');
 		const tagsButtons = document.querySelector('.category-tabs');
-		for (var i = 0; i < tagsButtons.children.length; i++) {
-			tagsButtons.children[i].addEventListener('click', (e) => {
-				for (var k = 0; k < tagsButtons.children.length; k++) {tagsButtons.children[k].classList.remove('active');}
-				if ((e.target.innerHTML.toLowerCase() === "all") || (e.target.id === "search-bar")) {
-					searchBar.value = '';
-					tagsButtons.children[0].classList.add('active');
-				} else {
-					searchBar.value = e.target.innerText;
-					e.target.classList.add('active');
+		// Search Bar
+			searchBar.addEventListener('input', (e) => {searchComponent(e.target.value); setActiveNav(tagsButtons, "all");});
+			function searchComponent(_str) {
+				const _val = searchBar.value.toLowerCase();
+				const container = document.querySelector('#assets-container');
+				for (var i = 0; i < container.children.length; i++) {
+					let _strContentCurrentChild = container.children[i].querySelector(':first-child').innerHTML.toLowerCase();
+					const isVisible = _strContentCurrentChild.includes(_val);
+					container.children[i].classList.toggle('hide', !isVisible);
 				}
-				searchComponent(searchBar.value);
+			}
+			function setActiveNav(_parElement, _str = "") {
+				for (var i = 0; i < _parElement.children.length; i++) {
+					_parElement.children[i].classList.remove('active');
+					if (_parElement.children[i].innerHTML.toLowerCase() === _str.toLowerCase()) {_parElement.children[i].classList.add('active');}
+				}
+			}
+		// Tabs
+			for (var i = 0; i < tagsButtons.children.length - 1; i++) {
+				tagsButtons.children[i].addEventListener('click', (e) => {
+					let _strActive = "all";
+					if ((e.target.innerHTML.toLowerCase() === "all") || (e.target.id === "search-bar")) {
+						searchBar.value = '';
+					} else {
+						searchBar.value = e.target.innerText;
+						_strActive = searchBar.value;
+					}
+					setActiveNav(tagsButtons, _strActive);
+					searchComponent(searchBar.value);
 
-				const allHidden = (document.querySelectorAll('#assets-container > :not(.hide)').length === 0);
-				document.querySelector('#banner-no-component').classList.toggle('hide', !allHidden);
-			});
-		}
+					const allHidden = (document.querySelectorAll('#assets-container > :not(.hide)').length === 0);
+					document.querySelector('#banner-no-component').classList.toggle('hide', !allHidden);
+				});
+			}
 }
 
 async function fetchData(_url) {
