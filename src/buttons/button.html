@@ -1,30 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
 <body>
-	<a>Btn Test</a>	
-	<a>Btn Test 2</a>	
-	<a>Btn Test 3</a>	
-	<a>Btn Test 4</a>	
+	<div>
+		<a>Home</a>	
+		<a>About</a>	
+		<a>Service</a>
+		<a>Contact</a>
+	</div>
 	<script>
-		const _btn = document.querySelector('a'); console.log('_btn : ', _btn);
-		_btn.addEventListener('click', e => {console.log(e);});
+		const btns = document.querySelectorAll('a');
+		for (var i = 0; i < btns.length; i++) {console.log(btns[i]);}
+		function toggleActive(_target) {console.log(_target);}
+		function ngentod() {console.log('ngentod');}
+		setInterval(ngentod, 1000);
 	</script>
 </body>
+</html>
+
 
 <style>
-html {border: 1px solid green;}
-body {border: 1px solid yellow; width: fit-content;}
+div {
+	display: flex; gap: .375rem; flex-wrap: wrap; justify-content: center;
+}
 a {
+	flex: 1 1 auto;
 	display: block;
+	text-decoration: none;
 	padding: .75rem 1rem;
 	background-color: #242424;
-	color: #808080;
+	color: #909090;
 	font-family: calibri;
-	border: 1px solid white;
-	width: fit-content;
-	/*margin: auto;*/
+	transition: all ease .15s;
 }
-a:hover {
+a:hover, .active {
 	cursor: pointer;
 	color: #FFFFFF;
+	outline: 1px solid #606060;
+	border-bottom: 4px solid white;
+	margin-bottom: -4px;
 	background-color: #353535;
 }
 </style>

@@ -41,21 +41,18 @@ input::placeholder {color: var(--col-linkD);}
 h4.hero {margin: 1.5rem 0rem;}
 
 .category-tabs {display: flex; gap: .375rem; flex-wrap: wrap; justify-content: center;}
-.category-tabs * {padding: .5rem 1rem; min-height: 2.5rem; background-color: var(--col-linkB); border-radius: var(--bd-radA); align-content: center;}
+.category-tabs * {padding: .5rem 1rem; min-height: 2.5rem; background-color: var(--col-linkB); border-radius: var(--bd-radA); align-content: center; font-family: inter-regular, calibri;}
 .category-tabs input {flex: 1; background-color: #202020; color: var(--col-linkA); padding: .5rem .7rem; min-width: var(--min-width);}
-.category-tabs a.active {color: var(--col-linkB); background-color: var(--col-linkA); font-family: inter-regular;}
+.category-tabs a.active, .category-tabs a:hover {color: var(--col-linkB); background-color: var(--col-linkA);}
 
 .component-container {display: flex; flex-direction: column; gap: .25rem; padding: .75rem; background-color: var(--col-linkB); border-radius: var(--bd-radA);}
 .component-container > :first-child {margin-bottom: .5rem;}
 .component-container a {padding: .5rem 1rem; font-size: .875rem; background-color: var(--col-linkE); color: var(--col-linkD);}
-.component-container a.active {background-color: var(--col-linkA); color: var(--col-linkE); font-family: inter-regular; font-weight: normal;}
+.component-container a.active, .component-container a:hover {background-color: var(--col-linkA); color: var(--col-linkE);}
 .component-preview-container {position: relative;}
 .component-preview {
-	/*display: flex; justify-content: center; align-content: center; align-items: center;*/
-	/*resize: horizontal; overflow: hidden; width: 100%; max-width: 100%; padding: 1.5rem 1rem; background-color: var(--col-linkE); margin: auto; margin-bottom: .5rem; border-radius: var(--bd-radA);*/
-}
-iframe {
-	background-color: var(--col-linkE); margin: auto; width: 100%; border: none; outline: none; height: 300px;
+	display: flex; justify-content: center; align-content: center; align-items: center;
+	resize: horizontal; overflow: hidden; width: 100%; max-width: 100%; padding: 1.5rem 1rem; background-color: var(--col-linkE); margin: auto; margin-bottom: .5rem; border-radius: var(--bd-radA);
 }
 .component-code-block {background-color: var(--col-linkE); padding: 1rem; border-radius: var(--bd-radA); white-space: pre; overflow-x: scroll; font-size: .875rem;}
 
