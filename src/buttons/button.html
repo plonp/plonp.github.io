@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
+	<title>Responsive Navbar</title>
 </head>
 <body>
 	<div>
@@ -12,13 +12,6 @@
 		<a>Service</a>
 		<a>Contact</a>
 	</div>
-	<script>
-		const btns = document.querySelectorAll('a');
-		for (var i = 0; i < btns.length; i++) {console.log(btns[i]);}
-		function toggleActive(_target) {console.log(_target);}
-		function ngentod() {console.log('ngentod');}
-		setInterval(ngentod, 1000);
-	</script>
 </body>
 </html>
 
@@ -30,17 +23,19 @@ div {
 a {
 	flex: 1 1 auto;
 	display: block;
+	text-align: center;
 	text-decoration: none;
 	padding: .75rem 1rem;
 	background-color: #242424;
 	color: #909090;
 	font-family: calibri;
-	transition: all ease .15s;
+	outline: none;
+	transition: background ease .15s, outline ease .5s;
 }
 a:hover, .active {
 	cursor: pointer;
 	color: #FFFFFF;
-	outline: 1px solid #606060;
+	outline: 1px solid white;
 	border-bottom: 4px solid white;
 	margin-bottom: -4px;
 	background-color: #353535;

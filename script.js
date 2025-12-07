@@ -17,14 +17,17 @@ async function fetchData(_url) {
 		const HTMLData = parser.parseFromString(data, 'text/html');
 		console.log('HTMLData : ' , HTMLData)
 
-		const codeBlock = HTMLData.querySelector('style');
-		const codeBlockFix = codeBlock.textContent.replace('\n', '');
-		// codeBlock.textContent.replaceAll('\n', '').replaceAll('\t', '');
+		// Load Code Preview
+			const codeBlock = HTMLData.querySelector('style');
+			const codeBlockFix = codeBlock.textContent.replace('\n', '');
+			// codeBlock.textContent.replaceAll('\n', '').replaceAll('\t', '');
 
 		const _component = HTMLData.querySelector('body');
 		const _script = HTMLData.querySelector('script');
 		// const _previewComp = document.querySelector('.component-preview');
-		document.querySelector('.component-code-block').innerHTML = `${codeBlockFix}`;
+		const _codeBlock = document.querySelector('.component-code-block');
+		_codeBlock.innerHTML = `${codeBlockFix}`;
+		_codeBlock.innerHTML += `<a class="btn-copy" href=""><img src="/assets/icons/icon-button-copy.svg"></a>`
 
 		// Shadow DOM
 			const _compPreview = document.querySelector('.component-preview');
