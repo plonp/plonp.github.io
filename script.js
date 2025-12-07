@@ -27,7 +27,7 @@ async function fetchData(_url) {
 		// const _previewComp = document.querySelector('.component-preview');
 		const _codeBlock = document.querySelector('.component-code-block');
 		_codeBlock.innerHTML = `${codeBlockFix}`;
-		_codeBlock.innerHTML += `<a class="btn-copy" href=""><img src="/assets/icons/icon-button-copy.svg"></a>`
+		// _codeBlock.innerHTML += `<a class="btn-copy" href=""><img src="/assets/icons/icon-button-copy.svg"></a>`
 
 		// Shadow DOM
 			const _compPreview = document.querySelector('.component-preview');
