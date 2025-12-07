@@ -6,8 +6,13 @@ window.onload = function() {
 	// Category Buttons
 		const searchBar = document.querySelector('#search-bar');
 		const tagsButtons = document.querySelector('.category-tabs');
+		const bannerElement = document.querySelector('#banner-no-component');
 		// Search Bar
-			searchBar.addEventListener('input', (e) => {searchComponent(e.target.value); setActiveNav(tagsButtons, "all");});
+			searchBar.addEventListener('input', (e) => {
+				searchComponent(e.target.value);
+				setActiveNav(tagsButtons, "all");
+				hideElement(bannerElement, (document.querySelectorAll('#assets-container > :not(.hide)').length === 0));
+			});
 			function searchComponent(_str) {
 				const _val = searchBar.value.toLowerCase();
 				const container = document.querySelector('#assets-container');
@@ -23,6 +28,7 @@ window.onload = function() {
 					if (_parElement.children[i].innerHTML.toLowerCase() === _str.toLowerCase()) {_parElement.children[i].classList.add('active');}
 				}
 			}
+			function hideElement(_elementToggle, _condition) {_elementToggle.classList.toggle('hide', !_condition);}
 		// Tabs
 			for (var i = 0; i < tagsButtons.children.length - 1; i++) {
 				tagsButtons.children[i].addEventListener('click', (e) => {
@@ -35,9 +41,7 @@ window.onload = function() {
 					}
 					setActiveNav(tagsButtons, _strActive);
 					searchComponent(searchBar.value);
-
-					const allHidden = (document.querySelectorAll('#assets-container > :not(.hide)').length === 0);
-					document.querySelector('#banner-no-component').classList.toggle('hide', !allHidden);
+					hideElement(bannerElement, (document.querySelectorAll('#assets-container > :not(.hide)').length === 0));
 				});
 			}
 }
