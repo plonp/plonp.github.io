@@ -21,7 +21,7 @@ window.onload = function() {
 async function fetchData(_url) {
 	try {
 		const response = await fetch(_url);
-		let data = await response.text(); console.log('data : ', JSON.stringify(data));
+		let data = await response.text(); //console.log('data : ', JSON.stringify(data));
 
 		// Parse Fetched Data to HTML DOM
 			const parser = new DOMParser();
@@ -35,7 +35,7 @@ async function fetchData(_url) {
 		// Load HTML code block
 			const startIndex = data.indexOf('<body>'), endIndex = data.indexOf('</body>');
 			const codeHTML = data.substring(startIndex, endIndex).replace('<body>','').replace('\r\n','');
-			console.log('codeHTML : ', JSON.stringify(codeHTML));
+			// console.log('codeHTML : ', JSON.stringify(codeHTML));
 
 		// Load CSS code block
 			const codeCSS = HTMLData.querySelector('style').textContent.replace('\n', '');
