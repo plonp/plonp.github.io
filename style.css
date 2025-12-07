@@ -47,6 +47,9 @@ h4.hero {margin: 1.5rem 0rem;}
 #assets-container {display: flex; flex-direction: column; gap: .5rem;}
 .component-container {display: flex; flex-direction: column; gap: .25rem; padding: .75rem; background-color: var(--col-linkB); border-radius: var(--bd-radA);}
 .component-container > :first-child {margin-bottom: .5rem;}
+.component-header {display: flex; gap: 1rem; justify-content: space-between; align-items: center;}
+.component-header > :first-child {text-transform: capitalize;}
+.component-header > :nth-child(2) {font-family: inter-regular, calibri; font-size: .75rem; color: var(--col-linkC); text-align: right;}
 .component-nav a {padding: .5rem 1rem; font-size: .875rem; background-color: var(--col-linkE); color: var(--col-linkD); border-radius: var(--bd-radA) var(--bd-radA) 0 0; font-family: inter-regular, calibri;}
 .component-nav a.active, .component-nav a:hover {background-color: var(--col-linkA); color: var(--col-linkE);}
 .component-preview {
@@ -55,7 +58,8 @@ h4.hero {margin: 1.5rem 0rem;}
 }
 .component-code-container {position: relative;}
 .component-code-block {background-color: var(--col-linkE); padding: 1rem; border-radius: 0 var(--bd-radA) var(--bd-radA) var(--bd-radA); white-space: pre; overflow-x: auto; font-size: .875rem; min-height: 3.5rem;}
-.btn-copy {position: absolute; right: 12px; top: 12px; margin-right: 0; padding: .5rem; background: rgba(42,47,60, .25); border-radius: 4px; transition: all ease .15s;}
-.btn-copy:hover {background: rgba(42,47,60, .75);}
+#btn-copy {position: absolute; right: 12px; top: 12px; margin-right: 0; padding: .5rem; background: rgba(42,47,60, .25); border-radius: 4px; transition: all ease .15s;}
+#btn-copy:hover {background: rgba(42,47,60, .75);}
+#btn-copy img {pointer-events: none;}
 
 footer {width: 100%; text-align: center; padding: .75rem; border-top: 1px solid var(--col-linkB); color: var(--col-linkC); font-family: inter-regular, calibri; font-size: .75rem;}

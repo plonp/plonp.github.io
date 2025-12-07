@@ -16,7 +16,9 @@ async function fetchData(_url) {
 
 		// Get Last Modified Date
 			let _date = new Date(response.headers.get('last-modified'));
-			_date = `${_date.getDate()}.${_date.getMonth()}.${_date.getFullYear()}`;
+			const f = new Intl.DateTimeFormat("en-my", {dateStyle: "full", timeStyle: "short"});
+			_date = f.format(_date);
+			// _date = `${_date.getHours()}:${_date.getMinutes()}, ${_date.getDate()} ${get_month_name(_date.getMonth())} ${_date.getFullYear()}`;
 			console.log(_date);
 
 		// Load HTML code block
@@ -37,15 +39,15 @@ async function fetchData(_url) {
 				const fileName = _url.substring(_url.lastIndexOf('/') + 1).replace('.html','');
 
 				compContainer.innerHTML = `
-					<h3>${fileName}</h3>
+					<div class='component-header'><h3>${fileName}</h3><span>${_date}</span></div>
 					<div class='component-preview'>Loading...</div>
-					<div class="component-nav">
-						<a href="" id="btn-html" class="">HTML</a>
-						<a href="" id="btn-css" class="active">CSS</a>
+					<div class='component-nav'>
+						<a href='' id='btn-html' class=''>HTML</a>
+						<a href='' id='btn-css' class='active'>CSS</a>
 					</div>
-					<div class="component-code-container">
-						<div class="component-code-block"></div>
-						<a class="btn-copy" href=""><img src="/assets/icons/icon-button-copy.svg"></a>
+					<div class='component-code-container'>
+						<div class='component-code-block'></div>
+						<a id='btn-copy' href=''><img src='/assets/icons/icon-button-copy.svg'></a>
 					</div>
 				`;
 
@@ -57,16 +59,27 @@ async function fetchData(_url) {
 				// Preview Code
 					const codeContainer = compContainer.querySelector('.component-code-block');
 					codeContainer.innerText = `${codeCSS}`;
-					const tabs = compContainer.querySelector('.component-nav');
+					const tabs = compContainer.querySelector('.component-nav'), btnCopy = compContainer.querySelector('#btn-copy');
 					tabs.addEventListener('click', (e) => {
 						e.preventDefault();
 						for (var i = 0; i < tabs.children.length; i++) {tabs.children[i].classList.remove('active');}
 						if (e.target.id === "btn-html") {e.target.classList.add('active'); codeContainer.innerText = `${codeHTML}`}
 						else if (e.target.id === "btn-css") {e.target.classList.add('active'); codeContainer.innerText = `${codeCSS}`}
 					});
+					btnCopy.addEventListener('click', (e) => {
+						e.preventDefault(); console.log(e.target.id);
+						navigator.clipboard.writeText(codeContainer.innerText);
+					});
 
 			}
 
 
 	} catch (error) {console.error(error);}
+}
+
+
+function get_month_name(monthNum) {
+	const monthNamesFull = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+	const monthNames = ["Jan", "Febr", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
+	return monthNames[monthNum];
 }
