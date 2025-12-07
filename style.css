@@ -20,7 +20,7 @@ body {display: flex; flex-direction: column; gap: .75rem; justify-content: cente
 h1 {font-family: inter-regular, calibri; font-weight: normal;}
 h3 {font-family: inter-medium, calibri; font-size: 1rem; font-weight: normal;}
 h4 {font-family: inter-regular, calibri; font-weight: normal;}
-a {display: inline-block; text-decoration: none; color: var(--col-linkC);}
+a {display: inline-block; text-decoration: none; color: var(--col-linkC); transition: all ease .1s;}
 b {font-family: inter-medium, calibri;}
 img {display: block;}
 input {border: none;}
