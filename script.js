@@ -1,8 +1,8 @@
 window.onload = function() {
 	// Library Containers
-		const _libButtons = ["/src/buttons/button.html", "/src/buttons/mgm.html"];
+		const _libButtons = ["/src/buttons/button.html", "/src/buttons/buttonRounded.html"];
 	// Fetch components
-		fetchData(_libButtons[0]);
+		for (var i = 0; i < _libButtons.length; i++) {fetchData(_libButtons[i]);}
 	// Category Buttons
 		const searchBar = document.querySelector('#search-bar');
 		const tagsButtons = document.querySelector('.category-tabs');

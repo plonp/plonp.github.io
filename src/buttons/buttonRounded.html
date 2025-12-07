@@ -1,0 +1,35 @@
+<body>
+<div>
+	<a>Home</a>	
+	<a>About</a>
+	<a>Services</a>
+</div>
+</body>
+
+<style>
+div {
+	display: flex; gap: .5rem; flex-wrap: wrap; justify-content: center;
+}
+a {
+	flex: 1 1 auto;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	padding: .5rem 1rem;
+	background-color: #303030;
+	color: #ffffff;
+	font-family: calibri;
+	outline: 1px solid #404040;
+	border-radius: .75rem;
+	border-bottom: 3px solid #404040;
+	margin-bottom: -3px;
+	transition: background ease .15s, outline ease .25s;
+}
+a:hover, .active {
+	cursor: pointer;
+	color: #FFFFFF;
+	outline: 1px solid white;
+	border-bottom: 3px solid white;
+	background-color: #353535;
+}
+</style>
