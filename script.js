@@ -36,7 +36,7 @@ async function fetchData(_url) {
 
 		// Load HTML code block
 			const startIndex = data.indexOf('<body>'), endIndex = data.indexOf('</body>');
-			let codeHTML = data.substring(startIndex, endIndex).replace('<body>','');
+			const codeHTML = data.substring(startIndex, endIndex).replace('<body>','');
 			console.log('codeHTML : ', JSON.stringify(codeHTML));
 
 		// Load CSS code block
