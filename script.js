@@ -40,9 +40,10 @@ async function fetchData(_url) {
 		// Load CSS code block
 			const codeCSS = HTMLData.querySelector('style').textContent.replace('\n', '');
 
+		// Create Code Templates
 		const _component = HTMLData.querySelector('body');
 		const _codeBlock = document.querySelector('.component-code-block');
-		_codeBlock.textContent = `${codeHTML}`;
+		_codeBlock.innerText = `${codeHTML}`;
 
 		// Shadow DOM
 			const _compPreview = document.querySelector('.component-preview');
