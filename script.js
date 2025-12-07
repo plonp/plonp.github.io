@@ -1,21 +1,8 @@
 window.onload = function() {
 	// Library Containers
-		const _libButtons = ["/src/buttons/button.html"];
+		const _libButtons = ["/src/buttons/button.html", "/src/buttons/mgm.html"];
 	// Fetch components
 		fetchData(_libButtons[0]);
-	// Buttons
-		document.addEventListener('click', (e) => {
-			// e.preventDefault();
-			switch (e.target.id) {
-				case "btn-html": case "btn-css":
-					console.log(e.target.parentElement.parentElement);
-					loadCSS();
-					break;
-				default:
-					console.log(e.target);
-					break;
-			}
-		});
 }
 
 async function fetchData(_url) {
@@ -34,21 +21,52 @@ async function fetchData(_url) {
 
 		// Load HTML code block
 			const startIndex = data.indexOf('<body>'), endIndex = data.indexOf('</body>');
-			const codeHTML = data.substring(startIndex, endIndex).replace('<body>','').replace('\r\n','');
-			// console.log('codeHTML : ', JSON.stringify(codeHTML));
+			let codeHTML = data.substring(startIndex, endIndex).replace('<body>','');
+			codeHTML = codeHTML.replace('\r','').replace('\n', '');
 
 		// Load CSS code block
 			const codeCSS = HTMLData.querySelector('style').textContent.replace('\n', '');
 
 		// Create Code Templates
-		const _component = HTMLData.querySelector('body');
-		const _codeBlock = document.querySelector('.component-code-block');
-		_codeBlock.innerText = `${codeHTML}`;
+			const container = document.querySelector('#assets-container');
+			if (container) {
+				const compContainer = document.createElement('div');
+				compContainer.classList.add('component-container');
+				container.appendChild(compContainer);
 
-		// Shadow DOM
-			const _compPreview = document.querySelector('.component-preview');
-			const shadow = _compPreview.attachShadow({mode: 'open'}); //console.log(shadow)
-			shadow.appendChild(_component);
+				const fileName = _url.substring(_url.lastIndexOf('/') + 1).replace('.html','');
 
-	} catch (error) {console.log('error : ', error);}
+				compContainer.innerHTML = `
+					<h3>${fileName}</h3>
+					<div class='component-preview'>Loading...</div>
+					<div class="component-nav">
+						<a href="" id="btn-html" class="">HTML</a>
+						<a href="" id="btn-css" class="active">CSS</a>
+					</div>
+					<div class="component-code-container">
+						<div class="component-code-block"></div>
+						<a class="btn-copy" href=""><img src="/assets/icons/icon-button-copy.svg"></a>
+					</div>
+				`;
+
+				// Shadow DOM
+					const _component = HTMLData.querySelector('body');
+					const compPreview = compContainer.querySelector('.component-preview');
+					const shadow = compPreview.attachShadow({mode: 'open'}); //console.log(shadow)
+					shadow.appendChild(_component);
+				// Preview Code
+					const codeContainer = compContainer.querySelector('.component-code-block');
+					codeContainer.innerText = `${codeCSS}`;
+					const tabs = compContainer.querySelector('.component-nav');
+					tabs.addEventListener('click', (e) => {
+						e.preventDefault();
+						for (var i = 0; i < tabs.children.length; i++) {tabs.children[i].classList.remove('active');}
+						if (e.target.id === "btn-html") {e.target.classList.add('active'); codeContainer.innerText = `${codeHTML}`}
+						else if (e.target.id === "btn-css") {e.target.classList.add('active'); codeContainer.innerText = `${codeCSS}`}
+					});
+
+			}
+
+
+	} catch (error) {console.error(error);}
 }

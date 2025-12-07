@@ -44,6 +44,7 @@ h4.hero {margin: 1.5rem 0rem;}
 .category-tabs input {flex: 1; background-color: #202020; color: var(--col-linkA); padding: .5rem .7rem; min-width: var(--min-width);}
 .category-tabs a.active, .category-tabs a:hover {color: var(--col-linkB); background-color: var(--col-linkA);}
 
+#assets-container {display: flex; flex-direction: column; gap: .5rem;}
 .component-container {display: flex; flex-direction: column; gap: .25rem; padding: .75rem; background-color: var(--col-linkB); border-radius: var(--bd-radA);}
 .component-container > :first-child {margin-bottom: .5rem;}
 .component-nav a {padding: .5rem 1rem; font-size: .875rem; background-color: var(--col-linkE); color: var(--col-linkD); border-radius: var(--bd-radA) var(--bd-radA) 0 0; font-family: inter-regular, calibri;}
