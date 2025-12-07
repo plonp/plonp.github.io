@@ -27,6 +27,7 @@ input {border: none;}
 input:focus {border: none; outline: 1px solid var(--col-linkB);}
 input::placeholder {color: var(--col-linkD);}
 
+.hide {display: none !important;}
 .center {text-align: center;}
 .colA {color: var(--col-linkA);} .colB {color: var(--col-linkB);} .colC {color: var(--col-linkC);}
 
@@ -37,7 +38,7 @@ input::placeholder {color: var(--col-linkD);}
 .social-links-container img {margin: auto;}
 .social-links-container a:hover img {transform: scale(1.15);}
 
-h4.hero {margin: 1.5rem 0rem;}
+h4.hero {margin: 2.5rem 0rem;}
 
 .category-tabs {display: flex; gap: .375rem; flex-wrap: wrap; justify-content: center;}
 .category-tabs * {padding: .5rem 1rem; min-height: 2.5rem; background-color: var(--col-linkB); border-radius: var(--bd-radA); align-content: center; font-family: inter-regular, calibri;}
@@ -49,7 +50,7 @@ h4.hero {margin: 1.5rem 0rem;}
 .component-container > :first-child {margin-bottom: .5rem;}
 .component-header {display: flex; gap: 1rem; justify-content: space-between; align-items: center;}
 .component-header > :first-child {text-transform: capitalize;}
-.component-header > :nth-child(2) {font-family: inter-regular, calibri; font-size: .75rem; color: var(--col-linkC); text-align: right;}
+.component-header > :last-child {font-family: inter-regular, calibri; font-size: .75rem; color: var(--col-linkC); text-align: right;}
 .component-nav a {padding: .5rem 1rem; font-size: .875rem; background-color: var(--col-linkE); color: var(--col-linkD); border-radius: var(--bd-radA) var(--bd-radA) 0 0; font-family: inter-regular, calibri;}
 .component-nav a.active, .component-nav a:hover {background-color: var(--col-linkA); color: var(--col-linkE);}
 .component-preview {
@@ -61,5 +62,7 @@ h4.hero {margin: 1.5rem 0rem;}
 #btn-copy {position: absolute; right: 12px; top: 12px; margin-right: 0; padding: .5rem; background: rgba(42,47,60, .25); border-radius: 4px; transition: all ease .15s;}
 #btn-copy:hover {background: rgba(42,47,60, .75);}
 #btn-copy img {pointer-events: none;}
+
+#banner-no-component {width: 100%; padding: .75rem 1rem; background: rgba(0,0,0, .1); color: var(--col-linkC); text-align: center; border-radius: var(--bd-radA);}
 
 footer {width: 100%; text-align: center; padding: .75rem; border-top: 1px solid var(--col-linkB); color: var(--col-linkC); font-family: inter-regular, calibri; font-size: .75rem;}
