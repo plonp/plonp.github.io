@@ -18,11 +18,10 @@
 html {background: linear-gradient(180deg, #161616, #202020); color: #FFFFFF; font-family: inter-light, calibri; padding: 1.5rem .75rem; min-height: 100vh;}
 body {display: flex; flex-direction: column; gap: .75rem; justify-content: center; max-width: var(--max-width); margin: auto;}
 h1 {font-family: inter-regular, calibri; font-weight: normal;}
-h3 {font-family: inter-medium; font-size: 1rem; font-weight: normal;}
+h3 {font-family: inter-medium, calibri; font-size: 1rem; font-weight: normal;}
 h4 {font-family: inter-regular, calibri; font-weight: normal;}
 a {display: inline-block; text-decoration: none; color: var(--col-linkC);}
-/*a.active {color: var(--col-linkB); background-color: var(--col-linkA); font-family: inter-regular;}*/
-b {font-family: inter-medium;}
+b {font-family: inter-medium, calibri;}
 img {display: block;}
 input {border: none;}
 input:focus {border: none; outline: 1px solid var(--col-linkB);}
