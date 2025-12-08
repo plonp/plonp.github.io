@@ -23,12 +23,6 @@ window.onload = function() {
 					container.children[i].classList.toggle('hide', !isVisible);
 				}
 			}
-			function setActiveNav(_parElement, _str = "") {
-				for (var i = 0; i < _parElement.children.length; i++) {
-					_parElement.children[i].classList.remove('active');
-					if (_parElement.children[i].innerHTML.toLowerCase() === _str.toLowerCase()) {_parElement.children[i].classList.add('active');}
-				}
-			}
 			function hideElement(_elementToggle, _condition) {_elementToggle.classList.toggle('hide', !_condition);}
 		// Tabs
 			for (var i = 0; i < tagsButtons.children.length - 1; i++) {
@@ -89,9 +83,10 @@ async function fetchData(_url) {
 					</div>
 					<div class='component-code-container'>
 						<div class='component-code-block'></div>
-						<a id='btn-copy' href=''><img src='/assets/icons/icon-button-copy.svg'></a>
+						<a id='btn-copy' href=''></a>
 					</div>
 				`;
+				// <img src='/assets/icons/icon-button-copy.svg'>
 
 				// Shadow DOM
 					const _component = HTMLData.querySelector('body');
@@ -106,15 +101,22 @@ async function fetchData(_url) {
 					const tabs = compContainer.querySelector('.component-nav'), btnCopy = compContainer.querySelector('#btn-copy');
 					tabs.addEventListener('click', (e) => {
 						e.preventDefault();
-						for (var i = 0; i < tabs.children.length; i++) {tabs.children[i].classList.remove('active');}
-						if (e.target.id === "btn-html") {e.target.classList.add('active'); codeContainer.textContent = `${codeHTML}`; codeContainer.className = 'component-code-block language-xml'; delete codeContainer.dataset.highlighted; hljs.highlightElement(codeContainer);}
-						else if (e.target.id === "btn-css") {e.target.classList.add('active'); codeContainer.textContent = `${codeCSS}`; codeContainer.className = 'component-code-block language-css'; delete codeContainer.dataset.highlighted; hljs.highlightElement(codeContainer);}
+						if (e.target.id === "btn-html") {
+							setActiveNav(tabs, "html");
+							e.target.classList.add('active'); codeContainer.textContent = `${codeHTML}`;
+							codeContainer.className = 'component-code-block language-xml'; delete codeContainer.dataset.highlighted; hljs.highlightElement(codeContainer);
+						} else if (e.target.id === "btn-css") {
+							setActiveNav(tabs, "css");
+							e.target.classList.add('active'); codeContainer.textContent = `${codeCSS}`;
+							codeContainer.className = 'component-code-block language-css'; delete codeContainer.dataset.highlighted; hljs.highlightElement(codeContainer);
+						}
 					});
 					btnCopy.addEventListener('click', (e) => {
 						e.preventDefault();
-						const _img = btnCopy.querySelector('img');
-						_img.src = '/assets/icons/icon-button-tick.svg';
-						setTimeout(() => {_img.src = '/assets/icons/icon-button-copy.svg'}, 1000);
+						btnCopy.classList.add('active');
+						// const _img = btnCopy.querySelector('img');
+						// _img.src = '/assets/icons/icon-button-tick.svg';
+						setTimeout(() => {btnCopy.classList.remove('active')}, 500);
 						navigator.clipboard.writeText(codeContainer.innerText);
 					});
 			}
@@ -127,4 +129,11 @@ function get_month_name(monthNum) {
 	const monthNamesFull = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
 	const monthNames = ["Jan", "Febr", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
 	return monthNames[monthNum];
+}
+
+function setActiveNav(_parElement, _str = "") {
+	for (var i = 0; i < _parElement.children.length; i++) {
+		_parElement.children[i].classList.remove('active');
+		if (_parElement.children[i].innerHTML.toLowerCase() === _str.toLowerCase()) {_parElement.children[i].classList.add('active');}
+	}
 }
