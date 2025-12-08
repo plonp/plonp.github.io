@@ -2,7 +2,8 @@ window.onload = function() {
 	// Library Containers
 		const _libButtons = ["/src/buttons/button.html", "/src/buttons/buttonRounded.html"];
 	// Fetch components
-		for (var i = 0; i < _libButtons.length; i++) {fetchData(_libButtons[i]);}
+		async function loadComponents(_components) {for (var i = 0; i < _components.length; i++) {await fetchData(_libButtons[i]);}}
+		loadComponents(_libButtons);
 	// Category Buttons
 		const searchBar = document.querySelector('#search-bar');
 		const tagsButtons = document.querySelector('.category-tabs');
@@ -117,7 +118,8 @@ async function fetchData(_url) {
 						navigator.clipboard.writeText(codeContainer.innerText);
 					});
 			}
-	} catch (error) {console.error(error);}
+		return;
+	} catch (error) {console.error(error); return;}
 }
 
 
