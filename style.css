@@ -59,7 +59,7 @@ h4.hero {margin: 2.5rem 0rem;}
 	resize: horizontal; overflow: hidden; width: 100%; max-width: 100%; padding: 1.5rem 1rem; background-color: var(--col-linkE); margin: auto; margin-bottom: .5rem; border-radius: var(--bd-radA);
 }
 .component-code-container {position: relative;}
-.component-code-block {background-color: var(--col-linkE); padding: 1rem; border-radius: 0 var(--bd-radA) var(--bd-radA) var(--bd-radA); white-space: pre; overflow-x: auto; font-size: .875rem; min-height: 3.5rem;}
+div.component-code-block {background-color: var(--col-linkE); padding: 1rem; border-radius: 0 var(--bd-radA) var(--bd-radA) var(--bd-radA); white-space: pre; overflow-x: auto; font-size: .875rem; min-height: 3.5rem;}
 #btn-copy {position: absolute; right: 12px; top: 12px; margin-right: 0; padding: .5rem; background: rgba(42,47,60, .25); border-radius: 4px; transition: all ease .15s;}
 #btn-copy:hover {background: rgba(42,47,60, .75);}
 #btn-copy img {pointer-events: none;}

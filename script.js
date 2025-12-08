@@ -99,22 +99,24 @@ async function fetchData(_url) {
 					shadow.appendChild(_component);
 				// Preview Code
 					const codeContainer = compContainer.querySelector('.component-code-block');
-					codeContainer.innerText = `${codeHTML}`;
+					codeContainer.textContent = `${codeHTML}`;
+					hljs.highlightElement(codeContainer);
+
 					const tabs = compContainer.querySelector('.component-nav'), btnCopy = compContainer.querySelector('#btn-copy');
 					tabs.addEventListener('click', (e) => {
 						e.preventDefault();
 						for (var i = 0; i < tabs.children.length; i++) {tabs.children[i].classList.remove('active');}
-						if (e.target.id === "btn-html") {e.target.classList.add('active'); codeContainer.innerText = `${codeHTML}`}
-						else if (e.target.id === "btn-css") {e.target.classList.add('active'); codeContainer.innerText = `${codeCSS}`}
+						if (e.target.id === "btn-html") {e.target.classList.add('active'); codeContainer.textContent = `${codeHTML}`; codeContainer.className = 'component-code-block language-xml'; delete codeContainer.dataset.highlighted; hljs.highlightElement(codeContainer);}
+						else if (e.target.id === "btn-css") {e.target.classList.add('active'); codeContainer.textContent = `${codeCSS}`; codeContainer.className = 'component-code-block language-css'; delete codeContainer.dataset.highlighted; hljs.highlightElement(codeContainer);}
 					});
 					btnCopy.addEventListener('click', (e) => {
 						e.preventDefault();
+						const _img = btnCopy.querySelector('img');
+						_img.src = '/assets/icons/icon-button-tick.svg';
+						setTimeout(() => {_img.src = '/assets/icons/icon-button-copy.svg'}, 1000);
 						navigator.clipboard.writeText(codeContainer.innerText);
 					});
-
 			}
-
-
 	} catch (error) {console.error(error);}
 }
 
