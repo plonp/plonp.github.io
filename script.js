@@ -1,6 +1,6 @@
 window.onload = function() {
 	// Library Containers
-		const _libButtons = ["/src/buttons/button.html", "/src/buttons/buttonRounded.html"];
+		const _libButtons = ["/src/buttons/buttonRounded.html", "/src/buttons/button.html"];
 	// Fetch components
 		async function loadComponents(_components) {for (var i = 0; i < _components.length; i++) {await fetchData(_libButtons[i]);}}
 		loadComponents(_libButtons);
@@ -39,6 +39,8 @@ window.onload = function() {
 					hideElement(bannerElement, (document.querySelectorAll('#assets-container > :not(.hide)').length === 0));
 				});
 			}
+
+		// console.log('script', document.querySelectorAll('script')[4])
 }
 
 async function fetchData(_url) {
@@ -86,13 +88,13 @@ async function fetchData(_url) {
 						<a id='btn-copy' href=''></a>
 					</div>
 				`;
-				// <img src='/assets/icons/icon-button-copy.svg'>
 
 				// Shadow DOM
 					const _component = HTMLData.querySelector('body');
 					const compPreview = compContainer.querySelector('.component-preview');
-					const shadow = compPreview.attachShadow({mode: 'open'});
-					shadow.appendChild(_component);
+					compPreview.innerHTML = '';
+					const shadowRoot = compPreview.attachShadow({mode: 'open'});
+					shadowRoot.appendChild(_component);
 				// Preview Code
 					const codeContainer = compContainer.querySelector('.component-code-block');
 					codeContainer.textContent = `${codeHTML}`;
@@ -123,7 +125,6 @@ async function fetchData(_url) {
 		return;
 	} catch (error) {console.error(error); return;}
 }
-
 
 function get_month_name(monthNum) {
 	const monthNamesFull = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
