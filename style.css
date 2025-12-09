@@ -10,7 +10,8 @@
 	--col-linkB: #262932;
 	--col-linkC: #7A89AD;
 	--col-linkD: #3E4660;
-	--col-linkE: #1D1D1D;
+	--col-linkE: #1E1E1E;
+	--col-linkF: #1A1A1A;
 	--bd-radA: .375rem;
 	--bd-radB: .75rem;
 }
@@ -52,14 +53,14 @@ h4.hero {margin: 2.5rem 0rem;}
 .component-header {display: flex; gap: 1rem; justify-content: space-between; align-items: center;}
 .component-header > :first-child {text-transform: capitalize;}
 .component-header > :last-child {font-family: inter-regular, calibri; font-size: .75rem; color: var(--col-linkC); text-align: right;}
-.component-nav a {padding: .5rem 1rem; font-size: .875rem; background-color: var(--col-linkE); color: var(--col-linkD); border-radius: var(--bd-radA) var(--bd-radA) 0 0; font-family: inter-regular, calibri;}
-.component-nav a.active, .component-nav a:hover {background-color: var(--col-linkA); color: var(--col-linkE);}
+.component-nav a {padding: .5rem 1rem; font-size: .875rem; background-color: var(--col-linkF); color: var(--col-linkD); border-radius: var(--bd-radA) var(--bd-radA) 0 0; font-family: inter-regular, calibri;}
+.component-nav a.active, .component-nav a:hover {background-color: var(--col-linkA); color: var(--col-linkF);}
 .component-preview {
 	display: flex; justify-content: center; align-content: center; align-items: center; z-index: 0;
-	resize: horizontal; overflow: hidden; width: 100%; max-width: 100%; padding: 1.5rem 1rem; background-color: var(--col-linkE); margin: auto; margin-bottom: .5rem; border-radius: var(--bd-radA);
+	resize: horizontal; overflow: hidden; width: 100%; max-width: 100%; padding: 1.5rem 1rem; background-color: rgba(0,0,0, .2); margin: auto; margin-bottom: .5rem; border-radius: var(--bd-radA);
 }
 .component-code-container {position: relative;}
-div.component-code-block {background-color: var(--col-linkE); padding: 1rem; border-radius: 0 var(--bd-radA) var(--bd-radA) var(--bd-radA); white-space: pre; overflow-x: auto; font-size: .875rem; min-height: 3.5rem;}
+div.component-code-block {background-color: var(--col-linkF); padding: 1rem; border-radius: 0 var(--bd-radA) var(--bd-radA) var(--bd-radA); white-space: pre; overflow-x: auto; font-size: .875rem; min-height: 3.5rem;}
 #btn-copy {position: absolute; right: 12px; top: 12px; margin-right: 0; border-radius: 4px; min-width: 2rem; aspect-ratio: 1/1; background: url('/assets/icons/icon-button-copy.svg') no-repeat center, rgba(42,47,60, .25); transition: all ease-in-out .1s; }
 #btn-copy:hover {background: url('/assets/icons/icon-button-copy.svg') no-repeat center, rgba(42,47,60, .75);}
 #btn-copy.active {transform: scale(1.1); background: url('/assets/icons/icon-button-tick.svg') no-repeat center, rgba(42,47,60, 1);}

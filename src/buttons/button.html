@@ -12,23 +12,27 @@ div {
 	display: flex; gap: .375rem; flex-wrap: wrap; justify-content: center;
 }
 a {
+	--colText : #fffde5;
+	--colTextHighlight : #ffffff;
+	--colBG : #0c0c0c;
+	--colBGHighlight : #161616;
 	flex: 1 1 auto;
 	display: block;
 	text-align: center;
 	text-decoration: none;
 	padding: .75rem 1rem;
-	background-color: #242424;
-	color: #909090;
+	background-color: var(--colBG);
+	color: var(--colText);
 	font-family: calibri;
-	outline: 1px solid #242424;
-	transition: background ease .15s, outline ease .25s;
+	border: 1px solid var(--colText);
+	box-shadow: 0 3px var(--colText);
+	transition: all ease .15s;
 }
 a:hover, .active {
 	cursor: pointer;
-	color: #FFFFFF;
-	outline: 1px solid white;
-	border-bottom: 4px solid white;
-	margin-bottom: -4px;
-	background-color: #353535;
+	background-color: var(--colBGHighlight);
+	color: var(--colTextHighlight);
+	border-color: var(--colTextHighlight);
+	box-shadow: 0 6px var(--colTextHighlight);
 }
 </style>
