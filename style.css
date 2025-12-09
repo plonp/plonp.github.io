@@ -55,7 +55,7 @@ h4.hero {margin: 2.5rem 0rem;}
 .component-nav a {padding: .5rem 1rem; font-size: .875rem; background-color: var(--col-linkE); color: var(--col-linkD); border-radius: var(--bd-radA) var(--bd-radA) 0 0; font-family: inter-regular, calibri;}
 .component-nav a.active, .component-nav a:hover {background-color: var(--col-linkA); color: var(--col-linkE);}
 .component-preview {
-	display: flex; justify-content: center; align-content: center; align-items: center;
+	display: flex; justify-content: center; align-content: center; align-items: center; z-index: 0;
 	resize: horizontal; overflow: hidden; width: 100%; max-width: 100%; padding: 1.5rem 1rem; background-color: var(--col-linkE); margin: auto; margin-bottom: .5rem; border-radius: var(--bd-radA);
 }
 .component-code-container {position: relative;}
