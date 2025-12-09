@@ -1,0 +1,29 @@
+<body>
+<div>
+	<a>Edit</a>
+	<a>Delete<img src="/assets/icons/icon-button-delete.svg"></a>
+</div>
+</body>
+
+<style>
+div {display: flex; gap: .25rem;}
+a {
+	display: flex;
+	justify-content: center;
+	gap: .75rem;
+	text-align: center;
+	font-weight: bold;
+	min-width: 4rem;
+	padding: .875rem 1.25rem;
+	border-radius: .75rem;
+	border-top: 2px solid rgba(255,255,255, .3);
+	background: linear-gradient(180deg, rgba(30,30,30, 0.5), rgba(15,15,15, 0.5)), #FF3F3F;
+	filter: drop-shadow(0 .75rem .75rem rgba(0,0,0, .15));
+	transition: all ease .15s;
+}
+a:hover {
+	background: linear-gradient(180deg, rgba(30,30,30, 0.3), rgba(15,15,15, 0.3)), #FF3F3F;
+	border-top: 2px solid rgba(255,255,255, .5);
+	transform: translateY(-3px);
+}
+</style>
