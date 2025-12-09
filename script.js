@@ -1,6 +1,11 @@
 window.onload = function() {
 	// Library Containers
-		const _libButtons = ["/src/buttons/buttonRounded.html", "/src/buttons/button.html", "/src/buttons/button3D.html"];
+		const _libButtons = [
+			"/src/buttons/button3D.html",
+			"/src/buttons/button.html",
+			"/src/buttons/buttonRounded.html",
+			"/src/cards/cardA.html",
+		];
 	// Fetch components
 		async function loadComponents(_components) {for (var i = 0; i < _components.length; i++) {await fetchData(_libButtons[i]);}}
 		loadComponents(_libButtons);
