@@ -29,7 +29,7 @@ window.onload = function() {
 					container.children[i].classList.toggle('hide', !isVisible);
 				}
 			}
-			function hideElement(_elementToggle, _condition) {_elementToggle.classList.toggle('hide', !_condition);}
+			function hideElement(_elementToToggle, _condition) {_elementToToggle.classList.toggle('hide', !_condition);}
 		// Tabs
 			for (var i = 0; i < tagsButtons.children.length - 1; i++) {
 				tagsButtons.children[i].addEventListener('click', (e) => {
