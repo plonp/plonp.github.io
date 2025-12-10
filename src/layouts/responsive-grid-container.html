@@ -1,0 +1,42 @@
+<body>
+<div class="container">
+	<a class="item">Grid Item A<span class="description">Description of the Item.</span></a>
+	<a class="item">Grid Item B<span class="description">Description of the Item.</span></a>
+	<a class="item">Grid Item C<span class="description">Description of the Item that is slightly longer.</span></a>
+</div>
+</body>
+
+<style>
+*, *::before, *::after {box-sizing: border-box; margin: 0; padding: 0;}
+body {width: 100%; min-width: fit-content;}
+
+.container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+	gap: .375rem;
+	padding: .375rem;
+	background-color: #191919;
+	border: 1px solid #202020;
+}
+.item {
+	display: flex;
+	flex-direction: column;
+	gap: .25rem;
+	border: 1px solid #353535;
+	padding: 1rem;
+	background-color: #292929;
+	color: #bebebe;
+	font-weight: 600;
+}
+.item:hover {
+	cursor: pointer;
+	border-color: #505050;
+	background-color: #323232;
+	color: white;
+}
+.description {
+	color: #808080;
+	font-size: .875rem;
+	font-weight: normal;
+}
+</style>
