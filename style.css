@@ -53,7 +53,7 @@ h4.hero {margin: 2.5rem 0rem;}
 .component-header {display: flex; gap: 1rem; justify-content: space-between; align-items: center;}
 .component-header > :first-child {text-transform: capitalize;}
 .component-header > :last-child {font-family: inter-regular, calibri; font-size: .75rem; color: var(--col-linkC); text-align: right;}
-.component-nav a {padding: .5rem 1rem; font-size: .875rem; background-color: var(--col-linkF); color: var(--col-linkD); border-radius: var(--bd-radA) var(--bd-radA) 0 0; font-family: inter-regular, calibri;}
+.component-nav a {padding: .5rem 1rem; font-size: .875rem; background-color: var(--col-linkF); color: var(--col-linkC); border-radius: var(--bd-radA) var(--bd-radA) 0 0; font-family: inter-regular, calibri;}
 .component-nav a.active, .component-nav a:hover {background-color: var(--col-linkA); color: var(--col-linkF);}
 .component-preview {
 	display: flex; justify-content: center; align-content: center; align-items: center; z-index: 0;
