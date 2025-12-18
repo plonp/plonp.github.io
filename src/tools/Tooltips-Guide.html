@@ -1,0 +1,27 @@
+<body>
+<div class="tooltip">
+	Hover to see tooltip.
+	<img src="/assets/icons/icon-tooltip-exclamation.svg">
+	<span class="tip">This is tooltip overlay.</span>
+</div>
+</body>
+
+<style>
+body {min-height: 80px;}
+img {display: block; height: fit-content;}
+.tooltip {
+	position: relative;
+	display: flex; gap: .75rem; align-items: center; justify-content: space-between;
+	padding: .75rem 1rem;
+	background-color: rgba(0,0,0, .15);
+	min-width: fit-content;
+}
+.tip {
+	display: none;
+	position: absolute; top: 100%; right: 0;
+	padding: .75rem 1rem;
+	background-color: rgba(0,0,0, .75);
+	z-index: 1;
+}
+.tooltip:hover .tip {display: block;}
+</style>
