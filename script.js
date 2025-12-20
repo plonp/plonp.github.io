@@ -46,8 +46,6 @@ window.onload = function() {
 					hideElement(bannerElement, (document.querySelectorAll('#assets-container > :not(.hide)').length === 0));
 				});
 			}
-
-		// console.log('script', document.querySelectorAll('script')[4])
 }
 
 async function fetchData(_url) {
@@ -123,8 +121,6 @@ async function fetchData(_url) {
 					btnCopy.addEventListener('click', (e) => {
 						e.preventDefault();
 						btnCopy.classList.add('active');
-						// const _img = btnCopy.querySelector('img');
-						// _img.src = '/assets/icons/icon-button-tick.svg';
 						setTimeout(() => {btnCopy.classList.remove('active')}, 500);
 						navigator.clipboard.writeText(codeContainer.innerText);
 					});

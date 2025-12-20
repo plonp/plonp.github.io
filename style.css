@@ -64,7 +64,6 @@ div.component-code-block {background-color: var(--col-linkF); padding: 1rem; bor
 #btn-copy {position: absolute; right: 12px; top: 12px; margin-right: 0; border-radius: 4px; min-width: 2rem; aspect-ratio: 1/1; background: url('/assets/icons/icon-button-copy.svg') no-repeat center, rgba(42,47,60, .25); transition: all ease-in-out .1s; }
 #btn-copy:hover {background: url('/assets/icons/icon-button-copy.svg') no-repeat center, rgba(42,47,60, .75);}
 #btn-copy.active {transform: scale(1.1); background: url('/assets/icons/icon-button-tick.svg') no-repeat center, rgba(42,47,60, 1);}
-/*#btn-copy img {pointer-events: none;}*/
 
 #banner-no-component {width: 100%; padding: .75rem 1rem; background: rgba(0,0,0, .1); color: var(--col-linkC); text-align: center; border-radius: var(--bd-radA);}
 
