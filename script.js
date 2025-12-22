@@ -1,6 +1,7 @@
 window.onload = function() {
 	// Library Containers
 		const _libButtons = [
+			"/src/buttons/navigation-tabs.html",
 			"/src/others/Tooltips-Guide.html",
 			"/src/layouts/responsive-grid-container.html",
 			"/src/layouts/responsive-flex-container.html",

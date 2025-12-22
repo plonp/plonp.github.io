@@ -1,0 +1,33 @@
+<body>
+<div class="tabs-container">
+	<a class="tab active" href="">Home</a>
+	<a class="tab" href="">About</a>
+	<a class="tab" href="">Apps</a>
+</div>
+</body>
+<style>
+body {
+	background-color: white;
+	padding: 1rem;
+	width: 100%;
+}
+.tabs-container {
+	display: flex; gap: .5rem;
+	background-color: #dddddd;
+	margin: auto;
+	width: fit-content;
+	padding: .5rem;
+	border-radius: .875rem;
+}
+.tab {
+	text-decoration: none; color: black;
+	padding: .5rem 1rem;
+	border-radius: .5rem;
+}
+.tab:hover {
+	background-color: #909090;
+}
+.tab.active {
+	background-color: white;
+}
+</style>
