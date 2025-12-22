@@ -1,19 +1,16 @@
 <body>
 <div class="tabs-container">
-	<a class="tab active" href="">Home</a>
-	<a class="tab" href="">About</a>
-	<a class="tab" href="">Apps</a>
+	<a class="tab active">Home</a>
+	<a class="tab">About</a>
+	<a class="tab">Apps</a>
 </div>
 </body>
 <style>
-body {
-	background-color: white;
-	padding: 1rem;
-	width: 100%;
-}
+body {background-color: white; padding: 1rem; width: 100%;}
+
 .tabs-container {
 	display: flex; gap: .5rem;
-	background-color: #dddddd;
+	background-color: #DDDDDD;
 	margin: auto;
 	width: fit-content;
 	padding: .5rem;
@@ -23,11 +20,15 @@ body {
 	text-decoration: none; color: black;
 	padding: .5rem 1rem;
 	border-radius: .5rem;
+	color: #808080;
+	cursor: pointer;
 }
 .tab:hover {
-	background-color: #909090;
+	color: black;
+	background-color: #EEEEEE;
 }
 .tab.active {
+	color: black;
 	background-color: white;
 }
 </style>
