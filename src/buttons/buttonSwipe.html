@@ -22,9 +22,10 @@
 <style>
 *, *::before, *::after {box-sizing: border-box; padding: 0; margin: 0;}
 
-.container {display: flex; gap: .5rem;}
+.container {display: flex; gap: .5rem; justify-content: center; flex-wrap: wrap;}
 .btn-swipe {
 	position: relative;
+	flex: 1; min-width: fit-content;
 	display: flex; flex-direction: column;
 	overflow: hidden;
 	cursor: pointer;
