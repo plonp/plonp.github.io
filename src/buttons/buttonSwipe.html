@@ -1,0 +1,52 @@
+<body>
+<div class="container">
+	<a class="btn-swipe">
+		<span>Home</span>
+		<span><img src="/assets/icons/icon-home.svg"></img></span>
+	</a>
+	<a class="btn-swipe">
+		<span>About</span>
+		<span>Me</span>
+	</a>
+	<a class="btn-swipe">
+		<span>Services</span>
+		<span>Solutions</span>
+	</a>
+	<a class="btn-swipe">
+		<span>Contact</span>
+		<span>Let's Talk</span>
+	</a>
+</div>
+</body>
+
+<style>
+*, *::before, *::after {box-sizing: border-box; padding: 0; margin: 0;}
+
+.container {display: flex; gap: .5rem; flex-wrap: wrap;}
+.btn-swipe {
+	position: relative;
+	flex: 1;
+	display: flex; flex-direction: column;
+	min-width: fit-content;
+	overflow: hidden;
+	background-color: rgba(0,0,0, .15);
+	cursor: pointer;
+	color: #606060;
+	border: 1px solid #303030;
+	transition: all ease .2s;
+}
+.btn-swipe:hover {color: white; border-color: white;}
+.btn-swipe > * {
+	display: flex; justify-content: center; align-items: center; align-content: center;
+	transition: inherit;
+}
+.btn-swipe > :first-child {
+	padding: .75rem 1.5rem;
+}
+.btn-swipe > :last-child {
+	position: absolute; top: 0; left: 0; bottom: 0; right: 0;
+	transform: translateY(100%);
+}
+.btn-swipe:hover > :first-child {transform: translateY(-100%);}
+.btn-swipe:hover > :last-child {transform: translateY(0);}
+</style>
