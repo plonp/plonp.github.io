@@ -1,0 +1,31 @@
+<body>
+<!-- <img class="card" src="/assets/texture-overlay-01.svg"></img> -->
+<div class="container">
+	
+</div>
+</body>
+
+<style>
+body {
+	position: relative;
+	color: white;
+	/*border: 1px solid red;*/
+	width: 100%;
+	background: linear-gradient(180deg, maroon, maroon);
+}
+.container::before {
+	content: "";
+	background: url('/assets/texture-overlay-01.svg');
+	background-position: center center;
+	background-size: cover;
+	opacity: .1;
+	mix-blend-mode: overlay;
+	position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+	border: 1px solid white;
+}
+.container {
+	background: linear-gradient(180deg, rgba(0,0,0, .5), rgba(80,80,80, .5));
+	position: relative;
+	min-height: 6rem;
+}
+</style>
