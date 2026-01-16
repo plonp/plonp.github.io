@@ -1,5 +1,4 @@
 <body>
-<!-- <img class="card" src="/assets/texture-overlay-01.svg"></img> -->
 <div class="container">
 	<div class="card">Card</div>
 	<div class="card">Card</div>
@@ -12,39 +11,47 @@ body {
 	position: relative;
 	color: white;
 	width: 100%;
-	background: linear-gradient(180deg, maroon, red);
 }
 .container::before {
 	content: "";
 	background: url('/assets/texture-overlay-01.svg');
 	background-position: center center;
 	background-size: cover;
-	opacity: .1;
+	opacity: .15;
 	mix-blend-mode: overlay;
 	position: absolute; top: 0; left: 0; right: 0; bottom: 0;
 	border: 1px solid white;
 }
 .container {
-	background: linear-gradient(180deg, rgba(0,0,0, .5), rgba(80,80,80, .5));
+	transition: all .3s ease;
+	background-color: #C52222;
 	position: relative;
 	min-height: 6rem;
 	display: flex; justify-content: center; gap: .5rem;
 	padding: 1rem;
+	z-index: 0;
 }
 .card::before {
 	content: "";
 	position: absolute; left: 0; top: 0; right: 0; bottom: 0;
-	background: linear-gradient(180deg, rgba(255,255,255, .5), rgba(80,80,80, 1));
+	background: linear-gradient(180deg, #B79494, #484848);
 	mix-blend-mode: overlay;
 	border-radius: 1rem;
+	z-index: -1;
 }
 .card {
 	position: relative;
 	align-content: center; text-align: center;
 	width: fit-content; min-width: 6rem; min-height: 8rem;
 	padding: 1rem;
+	transform: scale(1);
+	/*background-color: none;*/
+}
+.card:hover {
+	transform: scale(1.05);
 }
 .card:hover::before {
-	background: linear-gradient(180deg, rgba(124,124,124, 1), rgba(23,23,23, 1));
+	background: linear-gradient(180deg, rgba(99,60,189, 1), rgba(183,183,183, 1));
+	mix-blend-mode: difference;
 }
 </style>
