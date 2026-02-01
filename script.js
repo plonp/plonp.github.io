@@ -1,6 +1,7 @@
 window.onload = function() {
 	// Library Containers
 		const _libButtons = [
+			"/src/cards/card-triple-text.html",
 			"/src/buttons/buttonSwipe.html",
 			"/src/buttons/navigation-tabs.html",
 			"/src/others/Tooltips-Guide.html",
