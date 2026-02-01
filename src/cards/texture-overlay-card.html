@@ -30,28 +30,35 @@ body {
 	display: flex; justify-content: center; gap: .5rem;
 	padding: 1rem;
 	z-index: 0;
+	transition: all ease .1s;
 }
 .card::before {
 	content: "";
 	position: absolute; left: 0; top: 0; right: 0; bottom: 0;
 	background: linear-gradient(180deg, #B79494, #484848);
-	mix-blend-mode: overlay;
+	background-blend-mode: overlay;
 	border-radius: 1rem;
 	z-index: -1;
+	transition: inherit;
 }
 .card {
 	position: relative;
 	align-content: center; text-align: center;
 	width: fit-content; min-width: 6rem; min-height: 8rem;
 	padding: 1rem;
-	transform: scale(1);
-	/*background-color: none;*/
+	transition: inherit;
+	background-blend-mode: overlay;
 }
 .card:hover {
-	transform: scale(1.05);
 }
 .card:hover::before {
+	transform: translateY(-2px);
 	background: linear-gradient(180deg, rgba(99,60,189, 1), rgba(183,183,183, 1));
-	mix-blend-mode: difference;
+	/*mix-blend-mode: difference;*/
 }
 </style>
+
+<!-- Notes
+	CONS
+		- cannot use CSS transform properties on non pseudo selections without ::before, ::after (e.g. transform: scaleX(-2px);)
+ -->
