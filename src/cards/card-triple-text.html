@@ -1,0 +1,42 @@
+<body>
+<div>
+	<a class="card" href="#">
+		<span>Lorem</span>
+		<span>Lorem Ipsum</span>
+		<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+	</a>
+	<a class="card" href="#">
+		<span>Lorem</span>
+		<span>Lorem Ipsum</span>
+		<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+	</a>
+</div>
+</body>
+<style>
+div {
+	display: flex; gap: .5rem;
+	width: fit-content;
+	transition: all ease-in-out .1s;
+}
+.card {
+	display: flex; flex-direction: column; gap: .25rem;
+	flex: 1 1;
+	text-decoration: none;
+	color: white;
+	border-radius: .75rem;
+	padding: .75rem;
+	width: fit-content;
+	min-height: 12rem;
+	background: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,1)), url('https://picsum.photos/400/400');
+	outline: 1px solid rgba(255,255,255, 0);
+	transition: inherit;
+}
+.card > :nth-child(1) {font-size: 1.5rem; font-weight: bold; height: 100%;}
+.card > :nth-child(2) {font-size: 1rem; font-weight: bold;}
+.card > :nth-child(3) {font-size: .75rem; color: #bebebe;}
+.card:hover {
+	transform: translateY(-2px);
+	outline: 1px solid white;
+	background: linear-gradient(180deg, rgba(0,0,0,0.5), rgba(0,0,0,1)), url('https://picsum.photos/400/400');
+}
+</style>
