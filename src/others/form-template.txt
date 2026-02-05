@@ -1,0 +1,4 @@
+- Input Text
+- Input Textarea (with text formatting e.g. notes / description)
+- Input Date (with selections of day, month, year)
+- Input File (with filtering)
