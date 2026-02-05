@@ -1,4 +1,12 @@
-- Input Text
-- Input Textarea (with text formatting e.g. notes / description)
-- Input Date (with selections of day, month, year)
-- Input File (with filtering)
+Simple CRUD Inventory Management System
+
+* Modal popup when adding new item.
+	- Item Name (input name)
+	- Description (input textarea with text formatting e.g. notes / description)
+	- Date (with selections of day, month, year)
+	- Image File (input file with file type filtering)
+	
+	// Buttons
+		- Submit / Add // submit new item
+		- Edit (modal popup)
+		- Delete / Cancel
