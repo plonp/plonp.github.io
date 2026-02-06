@@ -1,1 +1,1 @@
-Sidebar Navigation
+Sidebar Navigation (similar to common dashboard web layout with dynamic content change based on the sidebar interactions)
