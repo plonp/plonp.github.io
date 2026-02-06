@@ -1,0 +1,3 @@
+modal-box-popup
+	- image preview
+	- close button
