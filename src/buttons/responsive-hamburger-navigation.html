@@ -12,9 +12,7 @@
 <style>
 *, *::before, *::after {box-sizing: border-box; margin: 0; padding: 0;}
 body {max-width: 20rem; min-width: fit-content; width: 100%; font-family: "Inter";}
-.container {
-	display: flex; flex-direction: column; gap: 0rem;
-}
+.container {display: flex; flex-direction: column;}
 
 .container-links {
 	display: none; flex-direction: column; gap: 2px; padding: 2px 0px;
@@ -34,18 +32,12 @@ body {max-width: 20rem; min-width: fit-content; width: 100%; font-family: "Inter
 	background-color: white;
 }
 
-.hamburger:hover ~ .container-links, .container-links:hover {
-	display: flex !important;
-}
+.hamburger:hover ~ .container-links, .container-links:hover {display: flex;}
 .hamburger {
 	display: flex; justify-content: center; align-content: center; align-items: center;
-	width: fit-content; height: fit-content;
 	min-width: 48px;
 	min-height: 48px;
-	/*background: url("assets/icons/icon-hamburger.svg");*/
-	/*background-repeat: no-repeat;*/
-	/*background-position: center center;*/
-	/*background-size: 2rem;*/
+	width: fit-content; height: fit-content;
 	border: 1px solid white;
 }
 .hamburger img {min-width: 1.5rem;}
