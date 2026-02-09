@@ -1,7 +1,7 @@
 window.onload = function() {
 	// Library Containers
 		const _libButtons = [
-			"/src/buttons/responsive-hamburger-navigation.html",
+			// "/src/buttons/responsive-hamburger-navigation.html",
 			"/src/cards/card-triple-text.html",
 			"/src/buttons/buttonSwipe.html",
 			"/src/buttons/navigation-tabs.html",
