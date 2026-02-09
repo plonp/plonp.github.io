@@ -1,22 +1,52 @@
 <body>
-<nav class="container">
-	<a href="">Link A</a>
-	<a href="">Link B</a>
-	<a href="">Link C</a>
-</nav>
+<div class="container">
+	<a class="hamburger" href=""><img src="/assets/icons/icon-hamburger.svg"></a>
+	<nav class="container-links">
+		<a class="link" href="">Link A</a>
+		<a class="link" href="">Link B</a>
+		<a class="link" href="">Link C</a>
+	</nav>		
+</div>
 </body>
 
 <style>
+*, *::before, *::after {box-sizing: border-box; margin: 0; padding: 0;}
+body {max-width: 20rem; min-width: fit-content; width: 100%; font-family: "Inter";}
 .container {
-	display: flex; gap: .5rem;
-	/*border: 1px solid white;*/
-	/* testing branch  */
+	display: flex; flex-direction: column; gap: 0rem;
 }
-a {
-	border-radius: .5rem;
+
+.container-links {
+	display: none; flex-direction: column; gap: 2px; padding: 2px 0px;
+	transition: all ease .1s;
+}
+.container-links a {
 	text-decoration: none;
+	color: #404040;
+	background-color: #1A1A1A;
+	padding: .5rem;
+	width: 100%;
+	transition: inherit;
+}
+.container-links a:hover {
+	padding-left: .75rem;
 	color: black;
 	background-color: white;
-	padding: 1rem;
 }
+
+.hamburger:hover ~ .container-links, .container-links:hover {
+	display: flex !important;
+}
+.hamburger {
+	display: flex; justify-content: center; align-content: center; align-items: center;
+	width: fit-content; height: fit-content;
+	min-width: 48px;
+	min-height: 48px;
+	/*background: url("assets/icons/icon-hamburger.svg");*/
+	/*background-repeat: no-repeat;*/
+	/*background-position: center center;*/
+	/*background-size: 2rem;*/
+	border: 1px solid white;
+}
+.hamburger img {min-width: 1.5rem;}
 </style>
