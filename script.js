@@ -115,11 +115,15 @@ async function fetchData(_url) {
 						if (e.target.id === "btn-html") {
 							setActiveNav(tabs, "html");
 							e.target.classList.add('active'); codeContainer.textContent = `${codeHTML}`;
-							codeContainer.className = 'component-code-block language-xml'; delete codeContainer.dataset.highlighted; hljs.highlightElement(codeContainer);
+							codeContainer.className = 'component-code-block language-xml';
+							delete codeContainer.dataset.highlighted;
+							hljs.highlightElement(codeContainer);
 						} else if (e.target.id === "btn-css") {
 							setActiveNav(tabs, "css");
 							e.target.classList.add('active'); codeContainer.textContent = `${codeCSS}`;
-							codeContainer.className = 'component-code-block language-css'; delete codeContainer.dataset.highlighted; hljs.highlightElement(codeContainer);
+							codeContainer.className = 'component-code-block language-css';
+							delete codeContainer.dataset.highlighted;
+							hljs.highlightElement(codeContainer);
 						}
 					});
 					btnCopy.addEventListener('click', (e) => {
