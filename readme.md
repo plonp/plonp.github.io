@@ -1,6 +1,6 @@
 ## Frontend Tips
 ```js
-// For truncate, add min-width: 0; to override default behavior of FLEX (default min-witdtth: auto;) or GRID item 
+// For truncate, add min-width: 0; to override default behavior of FLEX (default min-witdth: auto;) or GRID item 
 	.truncate-text {
 		overflow: hidden;
 		white-space: nowrap;
