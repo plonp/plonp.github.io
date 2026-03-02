@@ -6,6 +6,6 @@
 		overflow: hidden;
 		white-space: nowrap; /* stops text from wrapping of overflow */
 		text-overflow: ellipsis; /* truncate text that overflows its container and display an ellipsis (...) */
-		width: 200px; /* Or any other specific width constraint */
+		width: 100%;
 	}
 ```
