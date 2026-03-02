@@ -8,4 +8,5 @@
 		text-overflow: ellipsis; /* truncate text that overflows its container and display an ellipsis (...) */
 		width: 100%;
 	}
+	// Tailwind syntax : truncate, line-clamp-2, min-w-0
 ```
