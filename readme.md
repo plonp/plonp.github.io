@@ -33,4 +33,7 @@
 	.siblingElementToToggle {display: none;}
 	#checkbox {display: none;}
 	#checkbox:checked ~ .siblingElementToToggle {display: block;}
+
+/* Put in innerHtml to act as blank text*/
+	&nbsp; // non-breaking space
 ```
