@@ -1,6 +1,7 @@
 window.onload = function() {
 	// Library Containers
 		const _libButtons = [
+			"/src/layouts/calendar-table-style.html",
 			"/src/others/date-selector-styled.html",
 			"/src/buttons/responsive-hamburger-navigation.html",
 			"/src/cards/card-triple-text.html",
