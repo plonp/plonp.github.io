@@ -1,0 +1,48 @@
+<body>
+<table>
+	<thead>
+		<tr>
+			<th>No.</th>
+			<th>Header Column 1</th>
+			<th>Header Column 2</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><div>1</div></td>
+			<td><div>Col 2</div></td>
+			<td><div>Col 3</div></td>
+		</tr>
+		<tr>
+			<td><div>2</div></td>
+			<td><div>Col 2</div></td>
+			<td><div>Col 3</div></td>
+		</tr>
+		<tr>
+			<td><div>3</div></td>
+			<td><div>Col 2</div></td>
+			<td><div>Col 3</div></td>
+		</tr>
+		<tr>
+			<td><div>4</div></td>
+			<td><div>Col 2</div></td>
+			<td><div>Col 3</div></td>
+		</tr>
+	</tbody>
+</table>
+</body>
+
+<style>
+	*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+	body { width: 100%; min-width: fit-content; }
+
+	table {
+		border-collapse: collapse; /* removes gap between boxes */
+		border-spacing: 0;
+		width: 100%;
+	}
+	thead { background-color: orange; color: black; }
+	td, th { text-align: left; padding: .5rem .75rem; border: 1px solid orange; }
+	tr > :first-child { width: 0; white-space: nowrap; text-align: center; }
+	tbody > tr:nth-child(even) { background-color: rgba(255,255,255, .05); } /* add hint every even-numbered rows */
+</style>
