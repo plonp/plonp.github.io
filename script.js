@@ -1,6 +1,7 @@
 window.onload = function() {
 	// Library Containers
 		const _libButtons = [
+			"/src/cards/simple-progressive-blur.html",
 			"/src/others/alert-message-01.html",
 			"/src/layouts/calendar-table-style.html",
 			"/src/others/date-selector-styled.html",
