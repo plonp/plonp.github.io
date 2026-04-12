@@ -1,0 +1,21 @@
+<body>
+<div class="typing">Typing Text using CSS</div>
+</body>
+
+<style>
+img {display: block; height: fit-content;}
+.typing {
+	white-space: nowrap;
+	overflow: hidden;
+	border-right: 2px solid white;
+	width: 0;
+	animation: typing 2s steps(20, end) infinite, blink .75s infinite;
+	animation-delay: 1s;
+}
+@keyframes typing {
+	from {width: 0;} to {width: 18ch;}
+}
+@keyframes blink {
+	50% {border-color: transparent;}
+}
+</style>
