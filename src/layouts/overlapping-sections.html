@@ -1,0 +1,42 @@
+<body>
+<div class="hero">Hero Section</div>
+<div class="overlap-container">
+	<div class="card">
+		Card
+		<span>Description</span>
+	</div>
+	<div class="card">
+		Card
+		<span>Description</span>
+	</div>
+	<div class="card">
+		Card
+		<span>Description</span>
+	</div>
+	<div class="card">
+		Card
+		<span>Description</span>
+	</div>
+</div>
+</body>
+
+<style>
+body {width: 100%; font-family: Inter; transition: color linear .15s;}
+.hero {
+	display: flex; justify-content: center; align-items: center;
+	padding: 1rem; background-color: gray; color: #242424; min-height: 128px;
+}
+.overlap-container {
+	display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; padding: 0 1rem; font-size: .75rem; transition: inherit;
+	transform: translateY(-1.5rem); margin-bottom: -1.5rem;
+	filter: drop-shadow(0px 2px 6px rgba(0,0,0,.25));
+}
+.card {
+	display: flex; flex-direction: column; gap: .25rem;
+	flex: 1; padding: 1rem; background-color: white; color: #242424; font-weight: bold; border-top: 6px solid red; transition: inherit;
+}.card > span {
+	color: #808080; font-weight: normal;
+}
+.card:hover {background-color: red; color: white; border-top: 3px solid red; border-bottom: 3px solid red;}
+.card:hover > span {color: inherit;}
+</style>
