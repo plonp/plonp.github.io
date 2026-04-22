@@ -36,4 +36,7 @@
 
 /* Put in innerHtml to act as blank text*/
 	&nbsp; // non-breaking space
+
+/* Remove default vertical spacing in text */
+	REf : https://www.reddit.com/r/css/comments/1lylx9p/property_lineheight_how_to_remove_the_space_above/
 ```
